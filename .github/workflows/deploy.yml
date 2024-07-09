@@ -31,9 +31,7 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no $USERNAME@$HOST << 'EOF'
-          # Load environment variables
-          source ~/.profile
-          source ~/.bashrc
+          export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
           cd /root/scraper-test
 
